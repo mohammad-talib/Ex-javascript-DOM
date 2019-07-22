@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        var arrColor = ["blue", "red", "green"];
+        var counter = 0;
+        function change() {
+            if(counter == arrColor.length){
+                counter = 0;
+            }
+                document.getElementById('mydiv').style.backgroundColor = arrColor[counter++]     
+        }
+    </script>
+</head>
+<body>
+<div id="mydiv" onclick="change()"></div>
+</body>
+</html>

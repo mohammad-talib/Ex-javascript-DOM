@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #5: Input check</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+    <script>
+       
+        function check(){
+        var password1 = document.getElementById("password1").value;
+        var password2 = document.getElementById("password2").value;
+        var inputErr = document.getElementById("pw1_check");
+        var inputErr2 = document.getElementById("pw2_check")
+            if (password1.length > 0) {
+                if (password1.length < 6) {
+                    inputErr.innerHTML = "Too Short"; 
+                }else{
+                    inputErr.innerHTML = "";
+                }
+            
+            if (password2.length > 0 && password1 !== password2) {
+                inputErr2.innerHTML = "The two password don't match"
+            }
+
+            else{
+                inputErr2.innerHTML = ""
+            }
+        }else{
+            inputErr.innerHTML = "";
+        }
+
+        var btn = document.getElementById("submitBtn");
+        if(password1.length > 0 && password2.length > 0){
+            btn.style.display = "";
+        }else{
+            btn.style.display = "none";
+        }
+        
+        }
+
+        window.onload =  function(){
+            document.getElementById("submitBtn").style.display = "none";
+        }
+        
+    </script>
+</head>
+<body>
+
+<form name="pw">
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10" placeholder="Password" onkeyup="check()"></td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10" placeholder="Password"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn"/>
+</form>
+
+</body>
+</html>

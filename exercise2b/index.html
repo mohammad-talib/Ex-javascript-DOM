@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2b: Randomizing initial color</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        var arrColor = ["blue", "red", "green"];
+
+        function change() {
+            document.getElementById('mydiv').style.backgroundColor = arrColor[ Math.floor(Math.random() * arrColor.length )];
+        }
+    </script>
+</head>
+<body>
+<div id="mydiv" onclick="change()"></div>
+</body>
+</html>
