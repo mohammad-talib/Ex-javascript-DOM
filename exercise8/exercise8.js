@@ -18,7 +18,15 @@ function initGrid() {
         great.className = "choice";
         great.style.backgroundColor = colors[i];
         color.appendChild(great);
+        great.addEventListener("click", select);
     }
+}
+
+function select(){
+    var clr = this.style.backgroundColor;
+    var clk = document.getElementById("selected");
+    clk.style.backgroundColor = clr;
+    clk.innerHTML = clr;
 }
 
 window.onload = function () {
